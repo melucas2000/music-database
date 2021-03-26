@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Song Results</title>
+    <link rel="stylesheet" href="/styles/results.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&ampdisplay=swap"
+      rel="stylesheet"
+    />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script defer src="/scripts/login.js"></script>
+  </head>
+    <body>
+    <div class="stage">
+     <div class="logo-container">
+      <object class="logo" data="/images/logo.svg" type="image/svg+xml"></object>
+    </div>
+
+      <h1 class="title">
+          <span class="res">Top Song Results for <%=search%></span>
+        </span>
+      </h1>
+      <div class ="grid-container">
+        <% links.forEach(function(entry) {%>
+            <div class= "grid-item-1">
+                <h2 class="track"><span class="res"><%=entry.name%> by <%=entry.artists[0].name%></span></h2>
+                <h2 class="album"><span class="res"><%=entry.album.name%></span></h2>
+                <h2 class="date"><span class="res">Release Date: <%=entry.album.release_date%></span></h2>
+                <h2 class="popularity"><span class="res">Popularity: <%=entry.popularity%></span></h2>
+                <span class="frame"><iframe src="https://open.spotify.com/embed/track/<%=entry.id%>" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></span>
+                <a id="like-form" type="submit" value="LIKE" href="playlist/like/<%=entry.id%>/<%=entry.name%>/<%=entry.artists[0].name%>/<%=entry.album.name%>/<%=entry.popularity%>">Like</a>
+                <form method="post" action="playlist/save/<%=entry.id%>/<%=entry.name%>/<%=entry.artists[0].name%>/<%=entry.album.name%>/<%=entry.popularity%>">
+                  <div class="row-wrapper">
+                    <select name="selectedPlaylist">
+                      <option id="option-form" name="" value="0" selected>Select Playlist:</option>
+                        <% lists.forEach(function(list) {%>
+                          <option name="<%=list.playlistName%>" value="<%=list.playlistName%>"><%=list.playlistName%></option>
+                        <%});%>
+                    </select>
+                    <input id="save-form" type="submit" value="Save to Selected Playlist">
+                  </div>
+                </form>
+            </div>
+        <%});%>
+      </div>
+
+      <a id="search-form-top" type="submit" value="SEARCH" href="/search">Search</a>
+      <a id="playlist-form-top" type="submit" value="PLAYLIST" href="/playlist/new">Create a Playlist</a>
+      <a id="home-form-top" type="submit" value="HOME" href="/user/home">Home</a>
+      <a id="profile-form-top" type="submit" value="PROFILE" href="/user/profile">Profile</a>
+      <a id="logout-form-top" type="submit" value="LOGOUT" href="/logout">Logout</a>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    </div>
+      <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,192L48,197.3C96,203,192,213,288,224C384,235,480,245,576,224C672,203,768,149,864,149.3C960,149,1056,203,1152,202.7C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+      <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="0.2" d="M0,0L40,10.7C80,21,160,43,240,74.7C320,107,400,149,480,154.7C560,160,640,128,720,101.3C800,75,880,53,960,48C1040,43,1120,53,1200,48C1280,43,1360,21,1400,10.7L1440,0L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>    
+      <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="0.50" d="M0,96L48,85.3C96,75,192,53,288,69.3C384,85,480,139,576,160C672,181,768,171,864,138.7C960,107,1056,53,1152,53.3C1248,53,1344,107,1392,133.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+  </body>
+</html>

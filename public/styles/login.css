@@ -1,0 +1,285 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Noto Sans, sans-serif;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background-color: #ffffff;
+  overflow: hidden;
+  text-align: center;
+}
+
+form {
+  margin: 0 auto;
+  width: 250px;
+}
+
+/* title */
+.title {
+  font-weight: 600;
+  font-size: 2em;
+  color: #192029;
+}
+
+#email-form {
+  align-self: flex-start;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+/* input */
+.form-field {
+  margin-top: 10px;
+  outline: none;
+  padding: 4px;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  border: 3px #192029 solid;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: Noto Sans, sans-serif;
+  text-align: center;
+  width: auto;
+}
+
+.form-field:focus {
+  border-color: #2196f3;
+}
+
+#password-form,
+#username-form {
+  align-self: flex-start;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+/* login button */
+#login-form-submit {
+  display: block;
+  border-radius: 8px;
+  border: 5px #192029 solid;
+  background-color: #192029;
+  color: white;
+  font-size: 20px;
+  font-family: Noto Sans, sans-serif;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 239px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+#login-form-submit:hover {
+  background-color: rgba(255, 255, 255, 0.493);
+  color: #192029;
+}
+#login-form-submit:active {
+  background-color: rgb(216, 216, 216);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  color: #192029;
+}
+
+/* top login buttons */
+#login-form-top {
+  display: block;
+  border-radius: 8px;
+  border: 5px #192029 solid;
+  background-color: #192029;
+  color: white;
+  font-size: 20px;
+  font-family: Noto Sans, sans-serif;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: 80px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+}
+
+/* top login buttons */
+#register-form-top {
+  display: block;
+  border-radius: 8px;
+  border: 5px #192029 solid;
+  background-color: #192029;
+  color: white;
+  font-size: 20px;
+  font-family: Noto Sans, sans-serif;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: 80px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  position: absolute;
+  top: 0px;
+  right: 110px;
+}
+
+/* top create playlist buttons */
+#playlist-form-top {
+  display: block;
+  border-radius: 8px;
+  border: 5px #192029 solid;
+  background-color: #192029;
+  color: white;
+  font-size: 20px;
+  font-family: Noto Sans, sans-serif;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: 120px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  position: absolute;
+  top: 0px;
+  right: 110px;
+}
+
+#playlist-form-top:hover {
+  background-color: rgba(255, 255, 255, 0.493);
+  color: #192029;
+}
+
+#register-form-top:hover {
+  background-color: rgba(255, 255, 255, 0.493);
+  color: #192029;
+}
+
+#login-form-top:hover {
+  background-color: rgba(255, 255, 255, 0.493);
+  color: #192029;
+}
+
+/* messages styling */
+#messages {
+  font-size: 25px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 0%;
+  font-weight: bold;
+  color: #192029;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  bottom: -120px;
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+select {
+  margin-top: 10px;
+  outline: none;
+  padding: 4px;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  border: 3px #192029 solid;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: Noto Sans, sans-serif;
+  text-align: center;
+  width: auto;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 2px;
+  margin-top: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: rgb(255, 255, 255);
+  border: 3px #192029 solid;
+  border-radius: 10px;
+  margin-top: -4px;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* forgot password link */
+.psw {
+  font-weight: 600;
+  color: #192029;
+  margin-bottom: 5%;
+}

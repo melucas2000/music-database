@@ -1,0 +1,93 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0 auto;
+  font-family: Noto Sans, sans-serif;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+form {
+  margin: 0 auto;
+  width: 250px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 2em;
+  color: #192029;
+}
+#email-form {
+  align-self: flex-start;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.form-field {
+  margin-top: 50px;
+  outline: none;
+  padding: 4px;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  border: 3px #192029 solid;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: Noto Sans, sans-serif;
+  text-align: center;
+  width: auto;
+}
+
+.form-field:focus {
+  border-color: #2196f3;
+}
+#login-form-submit {
+  display: block;
+  border-radius: 8px;
+  border: 5px #192029 solid;
+  background-color: #192029;
+  color: white;
+  font-size: 20px;
+  font-family: Noto Sans, sans-serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 239px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+#login-form-submit:hover {
+  background-color: rgba(255, 255, 255, 0.493);
+  color: #192029;
+}
+#login-form-submit:active {
+  background-color: rgb(216, 216, 216);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  color: #192029;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  bottom: -150px;
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
